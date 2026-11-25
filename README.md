@@ -5,10 +5,6 @@ guidance. It pairs a responsive HTML/CSS/vanilla JavaScript interface with a
 FastAPI service and a persistent SQLite knowledge base. It uses no generative AI
 model, paid API, or external AI dependency.
 
-> **Responsible use:** Seed records are clearly identified as demonstration
-> guidance. Review source and publication details with a local KVK or agriculture
-> officer before making field decisions. The admin dashboard demonstrates a
-> knowledge-review workflow.
 
 ## Run
 
