@@ -56,7 +56,7 @@ desktop viewport. To capture an updated Marathi view, open `/?lang=mr`.
 - Seeded demonstration content for cotton, soybean, paddy, and government
   schemes.
 
-## Academic documentation
+## Documentation
 
 - [Architecture](docs/architecture.md)
 - [API reference](docs/api.md)
@@ -64,7 +64,6 @@ desktop viewport. To capture an updated Marathi view, open `/?lang=mr`.
 - [Data-source register](docs/data-sources.md)
 - [Farmer and admin user guide](docs/user-guide.md)
 - [Evaluation report](docs/evaluation.md)
-- [Generative AI Assignment 2 report](docs/Generative-AI-Assignment-2-Krishi-Voice.docx)
 
 Run the test suite with `python -m unittest discover -s tests -v`. Reproduce the
 small retrieval/refusal benchmark with `python scripts/evaluate.py`.
