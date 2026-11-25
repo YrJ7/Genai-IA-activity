@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#124b35"><title>Knowledge management — Krishi Voice</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/static/styles.css">
+</head>
+<body class="admin-page">
+  <div class="app-shell">
+    <aside class="sidebar">
+      <a class="brand" href="/"><span class="brand-mark"><svg viewBox="0 0 32 32" aria-hidden="true"><path d="M25.8 5.2C15.2 5.2 7.3 8.8 7.3 17.1c0 3.2 1.7 5.5 4.1 6.7 1-5.8 5.2-9.9 11.6-12.4-4.1 3.1-7.3 7.5-8.5 13.2 7.5.2 12.3-5.4 11.3-19.4Z" fill="currentColor"/><path d="M7.3 25.6c2.4-4.6 6.1-7.4 11.2-9.3" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span><span class="brand-copy"><strong>krishi<span>voice</span></strong><small>FARMER ASSISTANT</small></span></a>
+      <div class="side-label">WORKSPACE</div><a class="side-link" href="/"><span class="nav-icon">⌂</span><span>Farmer assistant</span></a><a class="side-link" href="/#examples"><span class="nav-icon">▧</span><span>Quick questions</span></a>
+      <div class="side-label side-label-spaced">RESOURCES</div><a class="side-link active" href="/admin"><span class="nav-icon">▤</span><span>Knowledge base</span><span class="nav-current"></span></a>
+      <div class="sidebar-bottom"><div class="season-card"><div class="season-icon">✳</div><div><strong>Knowledge library</strong><span>Keep guidance up to date</span></div><span class="season-dot"></span><p>Trusted knowledge, thoughtfully managed.</p></div><div class="profile-row"><span class="avatar admin-avatar">AD</span><span><strong>Admin user</strong><small>Administrator</small></span><span class="profile-menu">···</span></div></div>
+    </aside>
+    <main class="main-content">
+      <header class="topbar"><div class="breadcrumb"><span>Resources</span><span class="crumb-slash">/</span><strong>Knowledge base</strong></div><div class="top-actions"><span class="service-status"><span></span>Database connected</span><a class="back-farmer" href="/">↗ <span>Farmer view</span></a><button class="icon-button notification-button" aria-label="Notifications">♧<i></i></button></div></header>
+      <div class="content-wrap admin-wrap">
+        <section class="admin-title-row"><div><div class="eyebrow"><span class="eyebrow-line"></span>ADMINISTRATION</div><h1>Knowledge management</h1><p class="welcome-sub">Review, publish, and maintain trusted farmer guidance.</p></div><button id="add-record-button" class="primary-button"><span>＋</span> Add knowledge</button></section>
+        <section class="stats-grid">
+          <article class="stat-card"><div class="stat-top"><span>Total records</span><span class="stat-icon total-icon">▤</span></div><strong id="stat-total">—</strong><small>Across all categories</small><span class="stat-accent accent-green"></span></article>
+          <article class="stat-card"><div class="stat-top"><span>Approved</span><span class="stat-icon approved-icon">✓</span></div><strong id="stat-approved">—</strong><small>Available to farmers</small><span class="stat-accent accent-mint"></span></article>
+          <article class="stat-card"><div class="stat-top"><span>Pending review</span><span class="stat-icon pending-icon">◷</span></div><strong id="stat-pending">—</strong><small>Needs your attention</small><span class="stat-accent accent-yellow"></span></article>
+          <article class="stat-card"><div class="stat-top"><span>Farmer questions</span><span class="stat-icon query-icon">◇</span></div><strong id="stat-queries">—</strong><small>Questions received</small><span class="stat-accent accent-blue"></span></article>
+        </section>
+        <section class="admin-lower-grid">
+          <div class="records-panel">
+            <div class="panel-heading"><div><h2>Knowledge records</h2><p>Manage the guidance your farmers can access.</p></div><div class="panel-tools"><label class="search-box"><span>⌕</span><input id="record-search" type="search" placeholder="Search records..."></label><select id="status-filter" class="filter-select"><option value="all">All status</option><option value="pending">Pending</option><option value="approved">Approved</option><option value="rejected">Rejected</option></select></div></div>
+            <div class="table-wrap"><table><thead><tr><th>KNOWLEDGE RECORD</th><th>SOURCE</th><th>DATE</th><th>STATUS</th><th></th></tr></thead><tbody id="records-body"></tbody></table><div id="empty-records" class="empty-state" hidden>No records match your search.</div></div>
+            <div class="table-footer"><span id="record-count">Loading records…</span><span>Demo knowledge is clearly labeled</span></div>
+          </div>
+          <aside class="admin-side">
+            <div class="review-card"><div class="review-top"><span class="review-spark">✦</span><span>REVIEW QUEUE</span></div><strong id="queue-count">—</strong><p>records are waiting for your review.</p><button id="review-pending" class="text-button">Review pending records <span>→</span></button></div>
+            <div class="recent-card"><div class="recent-heading"><h3>Recent farmer questions</h3><span>DEMO</span></div><div id="recent-queries" class="recent-list"><div class="recent-empty">Questions will appear here as farmers use the assistant.</div></div></div>
+            <div class="demo-info"><span>ⓘ</span><p><strong>Demonstration data</strong><br>Seeded records are labeled demo guidance. Only approved content is shared with farmers.</p></div>
+          </aside>
+        </section>
+      </div>
+    </main>
+  </div>
+  <div id="record-modal" class="modal-backdrop" hidden><section class="record-modal" role="dialog" aria-modal="true" aria-labelledby="modal-title"><div class="modal-head"><div><div class="eyebrow"><span class="eyebrow-line"></span>KNOWLEDGE LIBRARY</div><h2 id="modal-title">Add a knowledge record</h2></div><button id="close-modal" class="modal-close" aria-label="Close">×</button></div>
+    <form id="record-form"><input type="hidden" id="record-id"><div class="form-grid"><label>Title<input id="record-title" required maxlength="200" placeholder="e.g. Managing soybean irrigation"></label><label>Category<input id="record-category" required maxlength="100" placeholder="e.g. Water management"></label><label class="form-span">Keywords <small>Comma-separated terms farmers might use</small><input id="record-keywords" maxlength="500" placeholder="soybean, water, irrigation"></label><label class="form-span">Answer (English)<textarea id="record-answer-en" required rows="4" placeholder="Write practical, verified guidance..."></textarea></label><label class="form-span">Answer (Hindi) <small>Optional</small><textarea id="record-answer-hi" rows="2"></textarea></label><label class="form-span">Answer (Marathi) <small>Optional</small><textarea id="record-answer-mr" rows="2"></textarea></label><label>Source<input id="record-source" required maxlength="300" placeholder="Organization or publication"></label><label>Publication date<input id="record-date" type="date" required></label><label>Status<select id="record-status"><option value="pending">Pending review</option><option value="approved">Approved</option><option value="rejected">Rejected</option></select></label></div><div id="form-error" class="form-error" role="alert"></div><div class="modal-actions"><button type="button" id="cancel-modal" class="secondary-button">Cancel</button><button type="submit" class="primary-button" id="save-record">Save record <span>→</span></button></div></form>
+  </section></div>
+  <div id="toast" class="toast" role="status"></div>
+  <script src="/static/admin.js"></script>
+</body>
+</html>

@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#124b35">
+  <title>Krishi Voice — Your farm, in good hands</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/static/styles.css">
+</head>
+<body class="farmer-page">
+  <div class="app-shell">
+    <aside class="sidebar">
+      <a class="brand" href="/" aria-label="Krishi Voice home">
+        <span class="brand-mark"><svg viewBox="0 0 32 32" aria-hidden="true"><path d="M25.8 5.2C15.2 5.2 7.3 8.8 7.3 17.1c0 3.2 1.7 5.5 4.1 6.7 1-5.8 5.2-9.9 11.6-12.4-4.1 3.1-7.3 7.5-8.5 13.2 7.5.2 12.3-5.4 11.3-19.4Z" fill="currentColor"/><path d="M7.3 25.6c2.4-4.6 6.1-7.4 11.2-9.3" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span>
+        <span class="brand-copy"><strong>krishi<span>voice</span></strong><small>FARMER ASSISTANT</small></span>
+      </a>
+      <div class="side-label" data-i18n="workspace">WORKSPACE</div>
+      <a class="side-link active" href="/"><span class="nav-icon">⌂</span><span data-i18n="askAssistant">Ask assistant</span><span class="nav-current"></span></a>
+      <a class="side-link" href="#examples"><span class="nav-icon">▧</span><span data-i18n="quickQuestions">Quick questions</span></a>
+      <div class="side-label side-label-spaced" data-i18n="resources">RESOURCES</div>
+      <a class="side-link" href="/admin"><span class="nav-icon">▤</span><span data-i18n="knowledgeBase">Knowledge base</span><span class="admin-chip">ADMIN</span></a>
+      <div class="sidebar-bottom">
+        <div class="season-card">
+          <div class="season-icon">✳</div>
+          <div><strong data-i18n="inSeason">In season</strong><span data-i18n="kharifSeason">Kharif · 2025</span></div>
+          <span class="season-dot"></span>
+          <p data-i18n="seasonNote">Small steps today, stronger harvest tomorrow.</p>
+        </div>
+        <div class="profile-row"><span class="avatar">RK</span><span><strong>Ramesh K.</strong><small data-i18n="farmer">Farmer</small></span><span class="profile-menu">···</span></div>
+      </div>
+    </aside>
+    <main class="main-content">
+      <header class="topbar">
+        <div class="breadcrumb"><span data-i18n="workspace">Workspace</span><span class="crumb-slash">/</span><strong data-i18n="askAssistant">Ask assistant</strong></div>
+        <div class="top-actions">
+          <span class="service-status"><span></span><span data-i18n="demoKnowledge">Demo knowledge</span></span>
+          <label class="language-wrap" aria-label="Language"><span>文</span><select id="language"><option value="en">English</option><option value="mr">मराठी</option><option value="hi">हिन्दी</option></select><span class="select-chevron">⌄</span></label>
+          <button class="icon-button notification-button" aria-label="Notifications">♧<i></i></button>
+        </div>
+      </header>
+      <div class="content-wrap">
+        <section class="welcome-row">
+          <div>
+            <div class="eyebrow"><span class="eyebrow-line"></span><span data-i18n="helloFarm">A LITTLE HELP GOES A LONG WAY</span></div>
+            <h1><span data-i18n="goodMorning">Good morning, Ramesh</span><span class="sun-icon">☀</span></h1>
+            <p class="welcome-sub" data-i18n="welcomeSub">What’s happening in your fields today?</p>
+          </div>
+          <div class="date-pill"><span>◷</span> <span data-i18n="today">Today</span>, <span id="today-date"></span></div>
+        </section>
+        <section class="hero-banner">
+          <div class="hero-copy"><span class="hero-kicker" data-i18n="yourFarmPartner">YOUR FARM, IN GOOD HANDS</span>
+            <h2 data-i18n="heroTitle">Good decisions<br>grow good things.</h2>
+            <p data-i18n="heroCopy">Ask a question in your language. Get practical guidance, rooted in trusted agricultural knowledge.</p>
+            <a href="#ask-card" class="hero-link"><span data-i18n="askQuestion">Ask a question</span><span>↗</span></a>
+          </div>
+          <div class="hero-art" aria-hidden="true">
+            <div class="sun-disc"></div><div class="hill hill-back"></div><div class="hill hill-front"></div>
+            <div class="crop crop-one"><i></i><i></i><i></i><i></i></div><div class="crop crop-two"><i></i><i></i><i></i><i></i></div>
+            <div class="crop crop-three"><i></i><i></i><i></i><i></i></div><div class="crop crop-four"><i></i><i></i><i></i><i></i></div>
+            <div class="bird bird-one">⌁</div><div class="bird bird-two">⌁</div>
+          </div>
+          <div class="hero-counter"><strong>01</strong><span>—</span><span data-i18n="practicalAdvice">PRACTICAL ADVICE</span></div>
+        </section>
+        <div class="section-heading"><div><h2 data-i18n="howCanWeHelp">How can we help?</h2><p data-i18n="helpSub">Ask in your own words, or try a question below.</p></div><span class="secure-note"><span>✦</span> <span data-i18n="farmerFirst">Farmer-first guidance</span></span></div>
+        <section class="assistant-grid">
+          <div class="chat-column">
+            <div class="ask-card" id="ask-card">
+              <div class="ask-card-top"><span class="assistant-orb">✳</span><div><strong data-i18n="askKrishi">Ask Krishi Voice</strong><span data-i18n="askHint">Your farming companion is listening</span></div><span class="online-tag"><i></i><span data-i18n="ready">READY</span></span></div>
+              <div class="input-shell"><textarea id="question-input" rows="2" data-i18n-placeholder="questionPlaceholder" placeholder="Ask about your crop, soil, irrigation or more..."></textarea><div class="input-actions"><span class="input-helper"><span>↵</span> <span data-i18n="enterHint">Enter to ask</span></span><div class="input-buttons"><button id="mic-button" class="mic-button" title="Speak your question" aria-label="Start voice input"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="9" y="3" width="6" height="12" rx="3"></rect><path d="M5.5 11.5a6.5 6.5 0 0 0 13 0M12 18v3m-4 0h8"></path></svg></button><button id="ask-button" class="ask-button"><span data-i18n="askButton">Ask Krishi</span><span>→</span></button></div></div></div>
+              <div id="voice-status" class="voice-status" aria-live="polite"></div>
+            </div>
+            <div id="conversation" class="conversation" aria-live="polite"></div>
+            <section id="examples" class="examples-section"><div class="examples-title"><strong data-i18n="tryAsking">Try asking</strong><span data-i18n="popularQuestions">POPULAR QUESTIONS</span></div><div class="example-list">
+              <button class="example-card" data-question="My cotton leaves are turning yellow."><span class="example-icon icon-cotton">✿</span><span><strong data-i18n="exampleCotton">My cotton leaves are turning yellow</strong><small data-i18n="cropHealth">CROP HEALTH</small></span><span class="example-arrow">↗</span></button>
+              <button class="example-card" data-question="How often should I irrigate soybean?"><span class="example-icon icon-water">⌁</span><span><strong data-i18n="exampleSoy">How often should I irrigate soybean?</strong><small data-i18n="waterManagement">WATER MANAGEMENT</small></span><span class="example-arrow">↗</span></button>
+              <button class="example-card" data-question="What is the recommended fertilizer for paddy?"><span class="example-icon icon-paddy">♧</span><span><strong data-i18n="examplePaddy">What fertilizer is recommended for paddy?</strong><small data-i18n="soilNutrients">SOIL & NUTRIENTS</small></span><span class="example-arrow">↗</span></button>
+              <button class="example-card" data-question="What government schemes are available for farmers?"><span class="example-icon icon-scheme">▤</span><span><strong data-i18n="exampleScheme">What government schemes can I apply for?</strong><small data-i18n="schemes">GOVERNMENT SCHEMES</small></span><span class="example-arrow">↗</span></button>
+            </div></section>
+          </div>
+          <aside class="right-column">
+            <div class="trust-card"><div class="trust-head"><span class="trust-icon">✧</span><span data-i18n="builtOnTrust">BUILT ON TRUST</span></div><h3 data-i18n="adviceYouCanTrust">Advice you can<br>feel good about.</h3><p data-i18n="trustCopy">Every answer draws from reviewed agricultural sources. We’ll always tell you when we don’t know.</p><div class="trust-divider"></div><div class="trust-stat"><span class="trust-check">✓</span><span data-i18n="reviewedSources">Reviewed knowledge sources</span><strong>04</strong></div><div class="trust-stat"><span class="trust-check">✓</span><span data-i18n="languageSupport">Your language, your way</span><strong>03</strong></div><div class="trust-footer"><span>✦</span><span data-i18n="demoNotice">Educational demo · Not a substitute for local expert advice</span></div></div>
+            <div class="help-card"><div class="help-icon">?</div><div><strong data-i18n="needMoreHelp">Need a little more help?</strong><p data-i18n="visitKvk">Your local KVK is always a good place to start.</p><a href="https://kvk.icar.gov.in/" target="_blank" rel="noreferrer"><span data-i18n="findYourKvk">Find your nearest KVK</span> ↗</a></div></div>
+          </aside>
+        </section>
+        <footer class="page-footer"><span>© 2026 Krishi Voice</span><span data-i18n="footerDisclaimer">Demo agricultural guidance · Always verify locally</span><span><span class="footer-dot"></span> <span data-i18n="allSystemsDemo">Demo is ready</span></span></footer>
+      </div>
+    </main>
+  </div>
+  <script src="/static/app.js"></script>
+</body>
+</html>
